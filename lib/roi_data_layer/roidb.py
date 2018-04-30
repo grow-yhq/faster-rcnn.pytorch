@@ -114,6 +114,7 @@ def combined_roidb(imdb_names, training=True):
     return roidb
 
   roidbs = [get_roidb(s) for s in imdb_names.split('+')]
+  print('roidbs: {}'.format(roidbs))
   roidb = roidbs[0]
 
   if len(roidbs) > 1:
