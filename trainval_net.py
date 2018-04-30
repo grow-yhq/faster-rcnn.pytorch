@@ -55,7 +55,7 @@ def parse_args():
                       default=100, type=int)
   parser.add_argument('--checkpoint_interval', dest='checkpoint_interval',
                       help='number of iterations to display',
-                      default=10000, type=int)
+                      default=5000, type=int)
 
   parser.add_argument('--save_dir', dest='save_dir',
                       help='directory to save models', default="./models",
@@ -200,11 +200,14 @@ if __name__ == '__main__':
   cfg.TRAIN.USE_FLIPPED = True
   cfg.USE_GPU_NMS = args.cuda
   imdb, roidb, ratio_list, ratio_index = combined_roidb(args.imdb_name)
+  print('imdb: {}\nroidb: {}\nratio_list: {}\nratio_index: {}'.format(imdb, roidb, ratio_list, ratio_index))
   train_size = len(roidb)
+  print('train_size: {}'.format(train_size))
 
   print('{:d} roidb entries'.format(len(roidb)))
 
   output_dir = args.save_dir + "/" + args.net + "/" + args.dataset
+  print('output_dir: {}'.format(output_dir))
   if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
