@@ -200,7 +200,7 @@ if __name__ == '__main__':
   cfg.TRAIN.USE_FLIPPED = True
   cfg.USE_GPU_NMS = args.cuda
   imdb, roidb, ratio_list, ratio_index = combined_roidb(args.imdb_name)
-  # print('imdb[0]: {}\nroidb[0]: {}\nratio_list: {}\nratio_index: {}'.format(imdb[0], roidb[0], ratio_list, ratio_index))
+  # print('imdb: {}\nroidb: {}\nratio_list: {}\nratio_index: {}'.format(imdb, roidb, ratio_list, ratio_index))
   train_size = len(roidb)
   # print('train_size: {}'.format(train_size))
 
