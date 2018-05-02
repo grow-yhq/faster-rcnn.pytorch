@@ -74,6 +74,7 @@ def _get_image_blob(roidb, scale_inds):
 
     if roidb[i]['flipped']:
       im = im[:, ::-1, :]
+    print(cfg.TRAIN.SCALES)
     target_size = cfg.TRAIN.SCALES[scale_inds[i]]
     print("{:d} target size: {:d}".format(i, target_size))
     im, im_scale = prep_im_for_blob(im, cfg.PIXEL_MEANS, target_size,
