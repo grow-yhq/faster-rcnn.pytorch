@@ -41,8 +41,8 @@ def get_minibatch(roidb, num_classes):
   else:
     # For the COCO ground truth boxes, exclude the ones that are ''iscrowd'' 
     gt_inds = np.where((roidb[0]['gt_classes'] != 0) & np.all(roidb[0]['gt_overlaps'].toarray() > -1.0, axis=1))[0]
-  print('gt_inds:\n{}'.format(gt_inds))
-  print(roidb[0]['gt_classes'])
+  # print('gt_inds:\n{}'.format(gt_inds))
+  # print(roidb[0]['gt_classes'])
   gt_boxes = np.empty((len(gt_inds), 5), dtype=np.float32)
   gt_boxes[:, 0:4] = roidb[0]['boxes'][gt_inds, :] * im_scales[0]
   gt_boxes[:, 4] = roidb[0]['gt_classes'][gt_inds]
@@ -77,9 +77,9 @@ def _get_image_blob(roidb, scale_inds):
 
     if roidb[i]['flipped']:
       im = im[:, ::-1, :]
-    print(cfg.TRAIN.SCALES)
+    # print(cfg.TRAIN.SCALES)
     target_size = cfg.TRAIN.SCALES[scale_inds[i]]
-    print("{:d} target size: {:d}".format(i, target_size))
+    # print("{:d} target size: {:d}".format(i, target_size))
     im, im_scale = prep_im_for_blob(im, cfg.PIXEL_MEANS, target_size,
                     cfg.TRAIN.MAX_SIZE)
     im_scales.append(im_scale)
