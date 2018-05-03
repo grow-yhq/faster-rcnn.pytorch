@@ -37,7 +37,7 @@ class _fasterRCNN(nn.Module):
         self.RCNN_roi_crop = _RoICrop()
 
     def forward(self, im_data, im_info, gt_boxes, num_boxes):
-        print('im_data.shape: {}'.format(im_data.shape()))
+        print('im_data.shape: {}'.format(im_data.shape))
         batch_size = im_data.size(0)
 
         im_info = im_info.data
