@@ -29,8 +29,8 @@ def im_list_to_blob(ims):
     for i in xrange(num_images):
         im = ims[i]
         blob[i, 0:im.shape[0], 0:im.shape[1], :] = im
-        print('im:\n', im)
-        print('blob:\n', blob)
+        # print('im:\n', im)
+        # print('blob:\n', blob)
 
     return blob
 
