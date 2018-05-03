@@ -60,6 +60,7 @@ def _get_image_blob(roidb, scale_inds):
   scales.
   """
   num_images = len(roidb)
+  print('--len of roidb: {}'.format(num_images))
 
   processed_ims = []
   im_scales = []
