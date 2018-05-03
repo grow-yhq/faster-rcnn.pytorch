@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c253297c-9989-473b-b477-73839807b6d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/roi_data_layer/minibatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/roi_data_layer/minibatch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roibatchLoader.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roibatchLoader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="929">
-              <caret line="66" column="25" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="25" />
+            <state relative-caret-position="565">
+              <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
               <folding>
                 <element signature="e#76#114#0" expanded="true" />
               </folding>
@@ -50,14 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="minibatch.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="minibatch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/roi_data_layer/minibatch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+            <state relative-caret-position="597">
+              <caret line="88" column="24" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="24" />
               <folding>
                 <element signature="e#330#368#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="blob.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/model/utils/blob.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="32" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -108,6 +117,7 @@
       <find>_load_pas</find>
       <find>Train.Trim</find>
       <find>train.sc</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,10 +130,11 @@
         <option value="$PROJECT_DIR$/train.sh" />
         <option value="$PROJECT_DIR$/trainval_net.py" />
         <option value="$PROJECT_DIR$/lib/roi_data_layer/roidb.py" />
-        <option value="$PROJECT_DIR$/lib/model/utils/blob.py" />
         <option value="$PROJECT_DIR$/lib/model/utils/config.py" />
         <option value="$PROJECT_DIR$/lib/datasets/pascal_voc.py" />
         <option value="$PROJECT_DIR$/lib/roi_data_layer/minibatch.py" />
+        <option value="$PROJECT_DIR$/lib/model/utils/blob.py" />
+        <option value="$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py" />
       </list>
     </option>
   </component>
@@ -487,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/model/utils/blob.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="49" column="23" selection-start-line="36" selection-start-column="8" selection-end-line="49" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/remote_sources/-159841856/-744274524/torch/utils/data/sampler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -556,16 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="929">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="e#76#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/model/utils/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -598,10 +592,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/roi_data_layer/minibatch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="597">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="24" />
           <folding>
             <element signature="e#330#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/model/utils/blob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/roi_data_layer/roibatchLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+          <folding>
+            <element signature="e#76#114#0" expanded="true" />
           </folding>
         </state>
       </provider>

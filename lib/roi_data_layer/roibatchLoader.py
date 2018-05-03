@@ -63,6 +63,7 @@ class roibatchLoader(data.Dataset):
     # get the anchor index for current sample index
     # here we set the anchor index to the last one
     # sample in this group
+    print('index_ratio:{}'.format(index_ratio))
     minibatch_db = [self._roidb[index_ratio]]
     blobs = get_minibatch(minibatch_db, self._num_classes)
     data = torch.from_numpy(blobs['data'])
