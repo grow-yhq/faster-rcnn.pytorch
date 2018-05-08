@@ -85,18 +85,18 @@ class _ProposalLayer(nn.Module):
         shifts = shifts.contiguous().type_as(scores).float()
 
         A = self._num_anchors
-        K = shifts.size(0)
+        K = shifts.size(0) # num_of_feature_pixel
 
         self._anchors = self._anchors.type_as(scores)
         # anchors = self._anchors.view(1, A, 4) + shifts.view(1, K, 4).permute(1, 0, 2).contiguous()
         anchors = self._anchors.view(1, A, 4) + shifts.view(K, 1, 4)
-        anchors = anchors.view(1, K * A, 4).expand(batch_size, K * A, 4)
+        anchors = anchors.view(1, K * A, 4).expand(batch_size, K * A, 4) # init anchors for each pixel
 
         # Transpose and reshape predicted bbox transformations to get them
         # into the same order as the anchors:
 
-        bbox_deltas = bbox_deltas.permute(0, 2, 3, 1).contiguous()
-        bbox_deltas = bbox_deltas.view(batch_size, -1, 4)
+        bbox_deltas = bbox_deltas.permute(0, 2, 3, 4, 1).contiguous()
+        bbox_deltas = bbox_deltas.view(batch_size, -1, 6)
 
         # Same story for the scores:
         scores = scores.permute(0, 2, 3, 1).contiguous()
